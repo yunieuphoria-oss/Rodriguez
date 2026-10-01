@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qiexhyl Yzal M. Rodriguez — UI/UX Designer & BSIT Student</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Playfair Display & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        beige: '#F5F2EB',
+                        cream: '#FAF8F5',
+                        burgundy: '#7A1C2E',
+                        darkburgundy: '#5C1422',
+                        darktext: '#2C2220',
+                        mutedtext: '#6A5E5B',
+                        cardborder: '#E8E2D5',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #F5F2EB;
+            color: #2C2220;
+            font-family: 'Inter', sans-serif;
+        }
+        .serif-title {
+            font-family: 'Playfair Display', serif;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F5F2EB;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #D4CBBC;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #7A1C2E;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.4s ease-out forwards;
+        }
+    </style>
+    <body class="selection:bg-[#7A1C2E] selection:text-white min-h-screen flex flex-col justify-between">
+
+     <header class="sticky top-0 z-50 bg-[#F5F2EB]/90 backdrop-blur-md border-b border-[#E8E2D5] transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#home" class="serif-title font-bold text-xl tracking-wider text-[#7A1C2E] hover:opacity-80 transition">
+                Q.Y.M.R.
+              </a>
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-[#6A5E5B]">
+                <a href="#home" class="hover:text-[#7A1C2E] transition">Home</a>
+                <a href="#about" class="hover:text-[#7A1C2E] transition">About Me</a>
+                <a href="#skills" class="hover:text-[#7A1C2E] transition">Skills</a>
+                <a href="#projects" class="hover:text-[#7A1C2E] transition">Projects</a>
+                <a href="#gallery" class="hover:text-[#7A1C2E] transition font-semibold text-[#7A1C2E]">Gallery</a>
+                <a href="#contact" class="hover:text-[#7A1C2E] transition">Contact</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <a href="#gallery" class="hidden sm:inline-flex items-center justify-center px-4 py-2 text-xs uppercase tracking-wider font-semibold rounded-full bg-[#7A1C2E] text-white hover:bg-[#5C1422] transition shadow-sm">
+                    View Gallery
+                </a>
+                <button id="mobile-menu-btn" class="md:hidden text-[#2C2220] hover:text-[#7A1C2E] focus:outline-none">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile menu dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[#FAF8F5] border-b border-[#E8E2D5] px-6 py-4 space-y-3">
+            <a href="#home" class="block text-[#2C2220] hover:text-[#7A1C2E] font-medium">Home</a>
+            <a href="#about" class="block text-[#2C2220] hover:text-[#7A1C2E] font-medium">About Me</a>
+            <a href="#skills" class="block text-[#2C2220] hover:text-[#7A1C2E] font-medium">Skills</a>
+            <a href="#projects" class="block text-[#2C2220] hover:text-[#7A1C2E] font-medium">Projects</a>
+            <a href="#gallery" class="block text-[#7A1C2E] hover:text-[#5C1422] font-semibold">Gallery</a>
+            <a href="#contact" class="block text-[#2C2220] hover:text-[#7A1C2E] font-medium">Contact</a>
+        </div>
+    </header>
+<main class="flex-grow">
+        <section id="home" class="min-h-[90vh] flex flex-col justify-center items-center max-w-4xl mx-auto px-6 py-16 text-center">
+            <!-- Profile Avatar with burgundy minimal frame -->
+            <div class="mb-8 relative group">
+                <div class="absolute -inset-1.5 bg-[#7A1C2E] rounded-full opacity-20 blur-sm group-hover:opacity-40 transition duration-300"></div>
+                <div class="relative w-36 h-36 md:w-44 md:h-44 rounded-full overflow-hidden border-2 border-[#7A1C2E] shadow-md bg-[#FAF8F5] flex items-center justify-center">
+                    <img src="PROFILE_PICTUREKISHEL.jpg" 
+                        alt="Qiexhyl Yzal M. Rodriguez" 
+                        class="w-full h-full object-cover"
+                    >
+                </div>
+            </div> 
+
+            <!-- Prominent Name -->
+            <h1 class="serif-title text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-[#7A1C2E] mb-3">
+                Qiexhyl Yzal M. Rodriguez
+            </h1>
+
+            <!-- Subtitle -->
+            <p class="text-sm sm:text-base font-semibold tracking-widest uppercase text-[#6A5E5B] mb-6">
+                UI/UX Designer • BSIT Student
+            </p>
+
+            <!-- Short Introduction -->
+            <p class="max-w-xl mx-auto text-[#6A5E5B] text-base sm:text-lg leading-relaxed mb-10">
+                Creating thoughtful, intuitive, and user-centered digital experiences through design and technology.
+            </p>
+
+            <!-- Main Functional Buttons -->
+            <div class="flex flex-wrap justify-center items-center gap-4 mb-16">
+                <a href="#projects" class="px-7 py-3.5 rounded-full bg-[#7A1C2E] text-white font-medium text-sm hover:bg-[#5C1422] transition shadow-sm hover:shadow">
+                    View My Work
+                </a>
+                <a href="#gallery" class="px-7 py-3.5 rounded-full bg-[#FAF8F5] border border-[#7A1C2E] text-[#7A1C2E] font-medium text-sm hover:bg-[#7A1C2E] hover:text-white transition shadow-sm">
+                    View Gallery <i class="fa-solid fa-arrow-right ml-1.5 text-xs"></i>
+                </a>
+                <a href="#about" class="px-7 py-3.5 rounded-full bg-[#FAF8F5] border border-[#E8E2D5] text-[#2C2220] font-medium text-sm hover:bg-[#E8E2D5] transition">
+                    About Me
+                </a>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <a href="#about" class="inline-flex flex-col items-center text-[#6A5E5B] hover:text-[#7A1C2E] transition animate-bounce">
+                <span class="text-xs uppercase tracking-widest mb-1 font-medium">Scroll to explore</span>
+                <i class="fa-solid fa-chevron-down text-xs"></i>
+            </a>
+        </section>
+
+        <section id="about" class="py-24 bg-[#FAF8F5] border-y border-[#E8E2D5]">
+            <div class="max-w-4xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <span class="text-xs font-bold uppercase tracking-widest text-[#7A1C2E] mb-2 block">Background & Mindset</span>
+                    <h2 class="serif-title text-3xl sm:text-4xl font-bold text-[#2C2220]">About Me</h2>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+                    <div class="space-y-4 text-[#6A5E5B] text-sm sm:text-base leading-relaxed">
+                        <p>
+                            Hello! I am <strong class="text-[#2C2220]">Qiexhyl Yzal M. Rodriguez</strong>, a Bachelor of Science in Information Technology (BSIT) student with a deep passion for UI/UX design and crafting meaningful digital interfaces.
+                        </p>
+                        <p>
+                            My academic journey has given me a solid technical grounding in programming and system development, which I combine with a human-centric approach to design. I believe that technology works best when it is intuitive, accessible, and elegant.
+                        </p>
+                        <div class="pt-4 flex items-center space-x-3 text-xs font-semibold uppercase tracking-wider text-[#7A1C2E]">
+                            <span><i class="fa-solid fa-check mr-1.5"></i> Understand</span>
+                            <span>→</span>
+                            <span><i class="fa-solid fa-check mr-1.5"></i> Design</span>
+                            <span>→</span>
+                            <span><i class="fa-solid fa-check mr-1.5"></i> Test</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#F5F2EB] p-8 rounded-2xl border border-[#E8E2D5] shadow-sm">
+                        <h3 class="serif-title text-xl font-bold text-[#2C2220] mb-4">Core Interests</h3>
+                        <ul class="space-y-3 text-sm text-[#6A5E5B]">
+                            <li class="flex items-center">
+                                <i class="fa-solid fa-circle-dot text-[#7A1C2E] mr-3 text-xs"></i> UI/UX Design & Wireframing
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fa-solid fa-circle-dot text-[#7A1C2E] mr-3 text-xs"></i> Visual Design & Digital Prototyping
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fa-solid fa-circle-dot text-[#7A1C2E] mr-3 text-xs"></i> Information Architecture & User Flows
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fa-solid fa-circle-dot text-[#7A1C2E] mr-3 text-xs"></i> Creative Problem-Solving in IT
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="py-24 max-w-5xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-xs font-bold uppercase tracking-widest text-[#7A1C2E] mb-2 block">Competencies</span>
+                <h2 class="serif-title text-3xl sm:text-4xl font-bold text-[#2C2220]">Skills & Tools</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- UI/UX Design -->
+                <div class="bg-[#FAF8F5] p-8 rounded-2xl border border-[#E8E2D5] shadow-sm">
+                    <div class="w-12 h-12 rounded-xl bg-[#F5F2EB] text-[#7A1C2E] flex items-center justify-center mb-6 text-xl">
+                        <i class="fa-solid fa-pen-nib"></i>
+                    </div>
+                    <h3 class="serif-title text-xl font-bold text-[#2C2220] mb-3">UI/UX Design</h3>
+                    <p class="text-xs text-[#6A5E5B] mb-4 font-medium uppercase tracking-wider">Methodologies & Concepts</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-[#F5F2EB] border border-[#E8E2D5] text-[#2C2220] rounded-lg text-xs font-medium">Wireframing</span>
+                        <span class="px-3 py-1 bg-[#F5F2EB] border border-[#E8E2D5] text-[#2C2220] rounded-lg text-xs font-medium">Prototyping</span>
+                        <span class="px-3 py-1 bg-[#F5F2EB] border border-[#E8E2D5] text-[#2C2220] rounded-lg text-xs font-medium">User Flows</span>
+                        <span class="px-3 py-1 bg-[#F5F2EB] border border-[#E8E2D5] text-[#2C2220] rounded-lg text-xs font-medium">Information Architecture</span>
+                        <span class="px-3 py-1 bg-[#F5F2EB] border border-[#E8E2D5] text-[#2C2220] rounded-lg text-xs font-medium">Responsive Design</span>
+                    </div>
+                </div>
+
+                <!-- Design Tools -->
+                <div class="bg-[#FAF8F5] p-8 rounded-2xl border border-[#E8E2D5] shadow-sm">
+                    <div class="w-12 h-12 rounded-xl bg-[#F5F2EB] text-[#7A1C2E] flex items-center justify-center mb-6 text-xl">
+                        <i class="fa-solid fa-palette"></i>
+                    </div>
+                    <h3 class="serif-title text-xl font-bold text-[#2C2220] mb-3">Design Tools</h3>
+                    <p class="text-xs text-[#6A5E5B] mb-4 font-medium uppercase tracking-wider">Software & Platforms</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-[#F5F2EB] border border-[#E8E2D5] text-[#2C2220] rounded-lg text-xs font-medium">Figma</span>
+                        <span class="px-3 py-1 bg-[#F5F2EB] border border-[#E8E2D5] text-[#2C2220] rounded-lg text-xs font-medium">FigJam</span>
+                        <span class="px-3 py-1 bg-[#F5F2EB] border border-[#E8E2D5] text-[#2C2220] rounded-lg text-xs font-medium">Canva</span>
+                        <span class="px-3 py-1 bg-[#F5F2EB] border border-[#E8E2D5] text-[#2C2220] rounded-lg text-xs font-medium">Visual Studio Code</span>
+                    </div>
+                </div>
+
+                <!-- Technical Stack -->
+                <div class="bg-[#FAF8F5] p-8 rounded-2xl border border-[#E8E2D5] shadow-sm">
+                    <div class="w-12 h-12 rounded-xl bg-[#F5F2EB] text-[#7A1C2E] flex items-center justify-center mb-6 text-xl">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <h3 class="serif-title text-xl font-bold text-[#2C2220] mb-3">Technical Stack</h3>
+                    <p class="text-xs text-[#6A5E5B] mb-4 font-medium uppercase tracking-wider">BSIT Foundation</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-[#F5F2EB] border border-[#E8E2D5] text-[#2C2220] rounded-lg text-xs font-medium">HTML & CSS</span>
+                        <span class="px-3 py-1 bg-[#F5F2EB] border border-[#E8E2D5] text-[#2C2220] rounded-lg text-xs font-medium">Java</span>
+                        <span class="px-3 py-1 bg-[#F5F2EB] border border-[#E8E2D5] text-[#2C2220] rounded-lg text-xs font-medium">Java Swing</span>
+                        <span class="px-3 py-1 bg-[#F5F2EB] border border-[#E8E2D5] text-[#2C2220] rounded-lg text-xs font-medium">Git & GitHub</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="py-24 bg-[#FAF8F5] border-y border-[#E8E2D5]">
+            <div class="max-w-5xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <span class="text-xs font-bold uppercase tracking-widest text-[#7A1C2E] mb-2 block">Portfolio Works</span>
+                    <h2 class="serif-title text-3xl sm:text-4xl font-bold text-[#2C2220]">Featured Projects</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+
+                    <div class="bg-[#F5F2EB] rounded-2xl overflow-hidden border border-[#E8E2D5] shadow-sm flex flex-col justify-between">
+                        <div class="p-6">
+                            <span class="text-xs font-semibold px-2.5 py-1 bg-[#FAF8F5] border border-[#E8E2D5] text-[#7A1C2E] rounded-md mb-3 inline-block">Java / OOP</span>
+                            <h3 class="serif-title text-xl font-bold text-[#2C2220] mb-2">TagaySHOP System</h3>
+                            <p class="text-[#6A5E5B] text-sm leading-relaxed mb-6">
+                                Object-oriented programming academic project featuring robust e-commerce logic and comprehensive documentation.
+                            </p>
+                        </div>
+                        <div class="px-6 pb-6 pt-0">
+                            <button onclick="openModal('TagaySHOP System', 'A Java-based Object-Oriented Programming academic project. Includes core e-commerce features, structured classes, and complete project documentation.', 'Java / OOP Academic Project', 'https://www.facebook.com/share/v/18Q2rcyDLs/')" class="w-full py-2.5 rounded-xl bg-[#FAF8F5] border border-[#E8E2D5] text-[#2C2220] text-sm font-medium hover:bg-[#7A1C2E] hover:text-white transition">
+                                View Project & Docs
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#F5F2EB] rounded-2xl overflow-hidden border border-[#E8E2D5] shadow-sm flex flex-col justify-between">
+                        <div class="p-6">
+                            <span class="text-xs font-semibold px-2.5 py-1 bg-[#FAF8F5] border border-[#E8E2D5] text-[#7A1C2E] rounded-md mb-3 inline-block">UI/UX Design</span>
+                            <h3 class="serif-title text-xl font-bold text-[#2C2220] mb-2">School Info System</h3>
+                            <p class="text-[#6A5E5B] text-sm leading-relaxed mb-6">
+                                Academic interface design and information system architecture focusing on student-centric navigation.
+                            </p>
+                        </div>
+                        <div class="px-6 pb-6 pt-0">
+                         <button onclick="openModal('School Info System', 'An information system architecture and UI/UX design project created for school data management, user profiles, and clean layout presentation.', 'UI/UX Design Concept', 'https://www.figma.com/design/uRsWSPWPfjqPda1uORKoEo/SCHOOLINFOSYSTEMRODRIGUEZ_COPY?node-id=0-1&p=f&t=2QnT5llPfxEVF70u-0')" class="w-full py-2.5 rounded-xl bg-[#FAF8F5] border border-[#E8E2D5] text-[#2C2220] text-sm font-medium hover:bg-[#7A1C2E] hover:text-white transition">
+                    View Project Details
+                      </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="py-24 max-w-6xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="text-xs font-bold uppercase tracking-widest text-[#7A1C2E] mb-2 block">Evidence & Showcase</span>
+                <h2 class="serif-title text-3xl sm:text-4xl font-bold text-[#2C2220]">Portfolio Gallery</h2>
+                <p class="text-[#6A5E5B] text-sm mt-2">Explore works, certificates, event photos, and academic documentation</p>
+            </div>
+
+           <!-- Filter Buttons -->
+    <div class="flex flex-wrap justify-center gap-2 mb-12">
+        <button onclick="filterGallery('all')" class="gallery-filter-btn px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider bg-[#7A1C2E] text-white transition shadow-sm" data-filter="all">All</button>
+        <button onclick="filterGallery('certificates')" class="gallery-filter-btn px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider bg-[#FAF8F5] border border-[#E8E2D5] text-[#2C2220] hover:bg-[#E8E2D5] transition" data-filter="certificates">Certificates</button>
+        <button onclick="filterGallery('school-activities')" class="gallery-filter-btn px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider bg-[#FAF8F5] border border-[#E8E2D5] text-[#2C2220] hover:bg-[#E8E2D5] transition" data-filter="school-activities">School Activities</button>
+        <button onclick="filterGallery('documentation')" class="gallery-filter-btn px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider bg-[#FAF8F5] border border-[#E8E2D5] text-[#2C2220] hover:bg-[#E8E2D5] transition" data-filter="documentation">Documentation</button>
+    </div>
+
+    <!-- Gallery Grid -->
+    <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        
+        <!-- Gallery Item 1: School Activities -->
+        <div class="gallery-item bg-[#FAF8F5] rounded-2xl overflow-hidden border border-[#E8E2D5] shadow-sm hover:shadow-md transition cursor-pointer group" data-category="school-activities" onclick="openLightbox('IT Day', 'IT_DAY.jpg', 'IT Day schedule with friends')">
+            <div class="h-48 bg-[#E8E2D5] overflow-hidden relative">
+                <img src="IT_DAY.jpg" alt="School Activities Evidence 1" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.src='https://placehold.co/600x400/e8e2d5/7a1c2e?text=IT+Day'">
+                <div class="absolute inset-0 bg-[#7A1C2E]/20 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                    <span class="px-3 py-1.5 bg-white text-[#7A1C2E] rounded-full text-xs font-bold shadow">View Image</span>
+                </div>
+            </div>
+            <div class="p-4">
+                <span class="text-xs font-semibold uppercase text-[#7A1C2E] tracking-wider">School Activities</span>
+                <h4 class="font-bold text-[#2C2220] text-sm mt-1">IT DAY</h4>
+                <p class="text-xs text-[#6A5E5B] mt-1">IT DAY SCHEDULE WITH FRIENDS</p>
+            </div>
+        </div>
+
+        <!-- Gallery Item 2: School Activities / Certificates Contextual Fit -->
+        <div class="gallery-item bg-[#FAF8F5] rounded-2xl overflow-hidden border border-[#E8E2D5] shadow-sm hover:shadow-md transition cursor-pointer group" data-category="school-activities" onclick="openLightbox('IT Day School', 'IT_DAYSCHOOL.jpg', 'IT Day activities at school')">
+            <div class="h-48 bg-[#E8E2D5] overflow-hidden relative">
+                <img src="IT_DAYSCHOOL.jpg" alt="School Activities Evidence 2" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.src='https://placehold.co/600x400/e8e2d5/7a1c2e?text=IT+Day+School'">
+                <div class="absolute inset-0 bg-[#7A1C2E]/20 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                    <span class="px-3 py-1.5 bg-white text-[#7A1C2E] rounded-full text-xs font-bold shadow">View Image</span>
+                </div>
+            </div>
+            <div class="p-4">
+                <span class="text-xs font-semibold uppercase text-[#7A1C2E] tracking-wider">School Activities</span>
+                <h4 class="font-bold text-[#2C2220] text-sm mt-1">IT DAY</h4>
+                <p class="text-xs text-[#6A5E5B] mt-1">IT DAY SCHEDULE WITH FRIENDS</p>
+            </div>
+        </div>
+
+        <!-- Gallery Item 3: Certificates -->
+        <div class="gallery-item bg-[#FAF8F5] rounded-2xl overflow-hidden border border-[#E8E2D5] shadow-sm hover:shadow-md transition cursor-pointer group" data-category="certificates" onclick="openLightbox('OOP Presentation Certificate', 'CERTIFICATE.jpg', 'Successfully presented the system TagaySHOP')">
+            <div class="h-48 bg-[#E8E2D5] overflow-hidden relative">
+                <img src="CERTIFICATE.jpg" alt="Certificates" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.src='https://placehold.co/600x400/e8e2d5/7a1c2e?text=Certificate'">
+                <div class="absolute inset-0 bg-[#7A1C2E]/20 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                    <span class="px-3 py-1.5 bg-white text-[#7A1C2E] rounded-full text-xs font-bold shadow">View Image</span>
+                </div>
+            </div>
+            <div class="p-4">
+                <span class="text-xs font-semibold uppercase text-[#7A1C2E] tracking-wider">Certificates</span>
+                <h4 class="font-bold text-[#2C2220] text-sm mt-1">OOP_PRESENTATION</h4>
+                <p class="text-xs text-[#6A5E5B] mt-1">SUCCESSFULLY PRESENTED THE SYSTEM "TAGAYSHOP"</p>
+            </div>
+        </div>
+
+        <!-- Gallery Item 4: Documentation -->
+        <div class="gallery-item bg-[#FAF8F5] rounded-2xl overflow-hidden border border-[#E8E2D5] shadow-sm hover:shadow-md transition cursor-pointer group" data-category="documentation" onclick="openLightbox('TagaySHOP Documentation', 'CERTIFICATE_TAGAYSHOP1.jpg', 'Photo with the group and professor after the presentation')">
+            <div class="h-48 bg-[#E8E2D5] overflow-hidden relative">
+                <img src="CERTIFICATE_TAGAYSHOP1.jpg" alt="Documentation" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.src='https://placehold.co/600x400/e8e2d5/7a1c2e?text=Documentation'">
+                <div class="absolute inset-0 bg-[#7A1C2E]/20 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                    <span class="px-3 py-1.5 bg-white text-[#7A1C2E] rounded-full text-xs font-bold shadow">View Image</span>
+                </div>
+            </div>
+            <div class="p-4">
+                <span class="text-xs font-semibold uppercase text-[#7A1C2E] tracking-wider">Documentation</span>
+                <h4 class="font-bold text-[#2C2220] text-sm mt-1">OOP_PRESENTATION</h4>
+                <p class="text-xs text-[#6A5E5B] mt-1">PHOTO WITH THE GROUP AND THE PROFESSOR AFTER THE PRESENTATION</p>
+            </div>
+        </div>
+
+    </div>
+        </section>
+
+        <section id="contact" class="py-24 bg-[#FAF8F5] border-t border-[#E8E2D5]">
+            <div class="max-w-3xl mx-auto px-6 text-center">
+                <span class="text-xs font-bold uppercase tracking-widest text-[#7A1C2E] mb-2 block">Get In Touch</span>
+                <h2 class="serif-title text-3xl sm:text-4xl font-bold text-[#2C2220] mb-4">Let's Connect</h2>
+                <p class="text-[#6A5E5B] text-sm sm:text-base mb-10">
+                    Have an opportunity, question, or want to collaborate with me? Feel free to reach out directly.
+                </p>
+
+                <div class="bg-[#F5F2EB] p-8 rounded-2xl border border-[#E8E2D5] shadow-sm max-w-lg mx-auto">
+                    <div class="flex items-center justify-center space-x-4 mb-6">
+                        <div class="w-12 h-12 rounded-full bg-[#FAF8F5] border border-[#E8E2D5] text-[#7A1C2E] flex items-center justify-center text-lg">
+                            <i class="fa-regular fa-envelope"></i>
+                        </div>
+                        <div class="text-left">
+                            <p class="text-xs text-[#6A5E5B] font-medium uppercase tracking-wider">Email Address</p>
+                            <a href="mailto:qiexhylrodriguez@sjp2cd.edu.ph" class="text-sm sm:text-base font-semibold text-[#2C2220] hover:text-[#7A1C2E] transition">
+                                qiexhylrodriguez@sjp2cd.edu.ph
+                            </a>
+                        </div>
+                    </div>
+                    <a href="mailto:qiexhylrodriguez@sjp2cd.edu.ph" class="block w-full py-3 bg-[#7A1C2E] text-white text-sm font-medium rounded-xl hover:bg-[#5C1422] transition shadow-sm">
+                        Send an Email
+                    </a>
+                </div>
+
+                <!-- Social Links -->
+                <div class="flex justify-center items-center space-x-4 mt-8">
+                    <a href="https://github.com/yunieuphoria-oss" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-[#FAF8F5] border border-[#E8E2D5] flex items-center justify-center text-[#2C2220] hover:bg-[#7A1C2E] hover:text-white transition shadow-sm" title="GitHub">
+                        <i class="fa-brands fa-github text-base"></i>
+                    </a>
+                    <a href="https://www.facebook.com/KishelRodriguezcc115" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-[#FAF8F5] border border-[#E8E2D5] flex items-center justify-center text-[#2C2220] hover:bg-[#7A1C2E] hover:text-white transition shadow-sm" title="Facebook / Video Project">
+                        <i class="fa-brands fa-facebook-f text-base"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Project Details Modal -->
+    <div id="project-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/50 backdrop-blur-sm px-4">
+        <div class="bg-[#FAF8F5] rounded-2xl max-w-lg w-full p-6 sm:p-8 shadow-xl relative border border-[#E8E2D5] animate-fade-in">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-[#6A5E5B] hover:text-[#2C2220]">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <span id="modal-category" class="inline-block text-xs font-semibold px-2.5 py-1 bg-[#F5F2EB] border border-[#E8E2D5] text-[#7A1C2E] rounded-md mb-3"></span>
+            <h3 id="modal-title" class="serif-title text-2xl font-bold text-[#2C2220] mb-3"></h3>
+            <p id="modal-description" class="text-[#6A5E5B] text-sm leading-relaxed mb-6"></p>
+            <div id="modal-link-container" class="hidden">
+                <a id="modal-link" href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-4 py-2.5 bg-[#7A1C2E] text-white text-sm font-medium rounded-xl hover:bg-[#5C1422] transition">
+                    View Project Documentation / Link <i class="fa-solid fa-arrow-up-right-from-square ml-2 text-xs"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox Modal for Gallery -->
+    <div id="lightbox-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-md px-4">
+        <div class="relative max-w-3xl w-full bg-[#FAF8F5] rounded-2xl overflow-hidden shadow-2xl border border-[#E8E2D5] animate-fade-in">
+            <div class="flex items-center justify-between px-6 py-4 border-b border-[#E8E2D5]">
+                <h3 id="lightbox-title" class="serif-title font-bold text-lg text-[#2C2220]"></h3>
+                <button onclick="closeLightbox()" class="text-[#6A5E5B] hover:text-[#2C2220] p-2">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+            </div>
+            <div class="p-4 bg-[#F5F2EB] flex justify-center items-center">
+                <img id="lightbox-img" src="" alt="Gallery Preview" class="max-h-[60vh] object-contain rounded-lg shadow" onerror="this.src='https://placehold.co/800x600/e8e2d5/7a1c2e?text=Placeholder+Image'">
+            </div>
+            <div class="px-6 py-4 bg-[#FAF8F5]">
+                <p id="lightbox-caption" class="text-xs sm:text-sm text-[#6A5E5B]"></p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-[#FAF8F5] border-t border-[#E8E2D5] py-8 text-center text-xs text-[#6A5E5B]">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p>© 2026 Qiexhyl Yzal M. Rodriguez. UI/UX Designer & BSIT Student.</p>
+            <div class="flex space-x-6">
+                <a href="#about" class="hover:text-[#7A1C2E] transition">About</a>
+                <a href="#skills" class="hover:text-[#7A1C2E] transition">Skills</a>
+                <a href="#projects" class="hover:text-[#7A1C2E] transition">Projects</a>
+                <a href="#gallery" class="hover:text-[#7A1C2E] transition">Gallery</a>
+                <a href="#contact" class="hover:text-[#7A1C2E] transition">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Gallery Filter Logic
+        function filterGallery(category) {
+            const items = document.querySelectorAll('.gallery-item');
+            const buttons = document.querySelectorAll('.gallery-filter-btn');
+
+            buttons.forEach(btn => {
+                if (btn.dataset.filter === category) {
+                    btn.classList.remove('bg-[#FAF8F5]', 'border', 'border-[#E8E2D5]', 'text-[#2C2220]');
+                    btn.classList.add('bg-[#7A1C2E]', 'text-white');
+                } else {
+                    btn.classList.add('bg-[#FAF8F5]', 'border', 'border-[#E8E2D5]', 'text-[#2C2220]');
+                    btn.classList.remove('bg-[#7A1C2E]', 'text-white');
+                }
+            });
+
+            items.forEach(item => {
+                if (category === 'all' || item.dataset.category === category) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Project Modal Logic
+        const modal = document.getElementById('project-modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalDescription = document.getElementById('modal-description');
+        const modalCategory = document.getElementById('modal-category');
+        const modalLinkContainer = document.getElementById('modal-link-container');
+        const modalLink = document.getElementById('modal-link');
+
+        function openModal(title, description, category, linkUrl) {
+            modalTitle.textContent = title;
+            modalDescription.textContent = description;
+            modalCategory.textContent = category;
+            
+            if (linkUrl && linkUrl !== '#') {
+                modalLink.href = linkUrl;
+                modalLinkContainer.classList.remove('hidden');
+            } else {
+                modalLinkContainer.classList.add('hidden');
+            }
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Lightbox Modal Logic
+        const lightbox = document.getElementById('lightbox-modal');
+        const lightboxTitle = document.getElementById('lightbox-title');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxCaption = document.getElementById('lightbox-caption');
+
+        function openLightbox(title, imgSrc, caption) {
+            lightboxTitle.textContent = title;
+            lightboxImg.src = imgSrc;
+            lightboxCaption.textContent = caption;
+            lightbox.classList.remove('hidden');
+            lightbox.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.classList.add('hidden');
+            lightbox.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modals on background click or Escape key
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+            if (e.target === lightbox) closeLightbox();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeModal();
+                closeLightbox();
+            }
+        });
+    </script>
+</body>
+</html>
